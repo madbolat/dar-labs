@@ -1,10 +1,12 @@
 <div class="layout">
-    <header class="header"></header>
+    <header class="header">
+        <h1>Students App</h1>
+    </header>
     <main class="main">
         <aside class="sidebar">
             <ul class="nav">
-                <li><a routerLink="/">Home</a></li>
-                <li><a [routerLink]="['students']">Students</a></li>
+                <li><a routerLink="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li><a [routerLink]="['students']"><i class="fa fa-fw fa-users"></i> Students</a></li>
             </ul>
         </aside>
         <section class="content">

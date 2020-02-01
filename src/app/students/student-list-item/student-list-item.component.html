@@ -1,11 +1,11 @@
-<td>{{ student.firstName }}</td>
-<td>{{ student.lastName }}</td>
-<td [ngClass]="{ 'red': student.score < 8 }" class="center">{{student.score}}</td>
+<td>{{ student.firstName }} {{ student.lastName }}</td>
 <td>
-    <ul>
+    <ol>
         <li *ngFor="let course of student.courses">{{course.name}}</li>
-    </ul>
+    </ol>
 </td>
+<td [ngClass]="{ 'red': student.score < 8 , 'green': student.score >= 8 }" class="center">{{student.score}}</td>
 <td class="center">
-    <button type="submit" class="del" (click)="delStud(student.id)"><i class="fa fa-trash"></i></button>
+    <button type="submit" class="btn btn-blue" (click)="editStud(student)"><i class="fa fa-pen"></i></button>
+    <button type="submit" class="btn btn-red" (click)="delStud(student.id)"><i class="fa fa-trash"></i></button>
 </td>

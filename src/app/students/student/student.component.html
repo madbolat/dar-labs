@@ -1,14 +1,24 @@
-<h3>Add student</h3>
-<form *ngIf="form" [formGroup]="form" (ngSubmit)="addStudent()">
-  <input type="text" placeholder="First Name" formControlName="firstName">
-  <div class="alert" *ngIf="formSubmitted && form.get('firstName').errors?.required">Field is empty</div>
-  <input type="text" placeholder="Last Name" formControlName="lastName">
-  <div class="alert" *ngIf="formSubmitted && form.get('lastName').errors?.required">Field is empty</div>
-  <input type="number" placeholder="Score" formControlName="score">
-  <div [formGroup]="courseFG" class="form-group" *ngFor="let courseFG of form.get('courses').controls">
-    <input type="text" placeholder="Course" formControlName="name">
-    <div class="alert" *ngIf="formSubmitted && courseFG.get('name').errors?.required">Field is empty</div>
-  </div>
-  <button type="button" (click)="addCourse()" class="del">Add course</button>
-  <button type="submit">OK</button>
-</form>
+<div class="student-form">
+  <h2><i class="fa fa-user-graduate"></i> {{ title }} student</h2>
+  <hr>
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="addStudent()">
+    <div class="stud-info">
+      <input type="text" placeholder="First Name" formControlName="firstName"><br>
+      <div class="alert" *ngIf="formSubmitted && form.get('firstName').errors?.required">^ Field is empty</div>
+      <input type="text" placeholder="Last Name" formControlName="lastName"><br>
+      <div class="alert" *ngIf="formSubmitted && form.get('lastName').errors?.required">^ Field is empty</div>
+      <input type="number" placeholder="Score" formControlName="score">
+    </div>
+    <div class="stud-info" *ngIf="courseAdded">
+      <hr><h3><i class="fa fa-book-open"></i> Courses</h3>
+      <div [formGroup]="courseFG" class="form-group" *ngFor="let courseFG of form.get('courses').controls">
+        <input type="text" placeholder="Course" formControlName="name">
+        <div class="alert" *ngIf="formSubmitted && courseFG.get('name').errors?.required">^ Field is empty</div>
+      </div>
+    </div>
+    <hr>
+    <a (click)="router.navigate(['students'])" class="btn btn-link"><i class="fa fa-chevron-left"></i> Go back</a>
+    <button type="button" (click)="addCourse()" class="btn btn-blue"><i class="fa fa-plus"></i> Add course</button>
+    <button type="submit" class="btn btn-green"><i class="fa fa-check"></i> OK</button>
+  </form>
+</div>

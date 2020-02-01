@@ -15,6 +15,8 @@ export class StudentComponent implements OnInit {
   form: FormGroup;
   public formSubmitted:boolean = false;
   student: Student;
+  title = 'Create';
+  courseAdded = false;
 
   constructor(
     private studentRestService: StudentRestService, 
@@ -31,12 +33,14 @@ export class StudentComponent implements OnInit {
     });
     this.route.params.subscribe(params => {
       if(params.id) {
+        this.title = 'Edit';
         this.studentRestService.getStudent(params.id)
         .subscribe(student => {
           this.student = student;
           // console.log(this.student);
           this.form.patchValue(this.student);
           if(this.student.courses) {
+            this.courseAdded = true;
             this.student.courses.forEach(course => {
               const controls = this.form.get('courses') as FormArray;
               controls.push(new FormGroup({
@@ -50,6 +54,7 @@ export class StudentComponent implements OnInit {
   }
 
   addCourse() {
+    this.courseAdded = true;
     const arrayControl = this.form.get('courses') as FormArray;
     arrayControl.push(new FormGroup({
       name: new FormControl('', Validators.required),

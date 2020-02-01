@@ -1,0 +1,26 @@
+.student-form {
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 0 1em rgba(0,0,0,0.3);
+    border-radius: 15px;
+    padding: 10px;
+    h2, h3 {
+        margin: 0;
+        padding: 10px;
+    }
+    hr {
+        border: 0;
+        border-top: 1px solid #ddd;
+    }
+    .stud-info {
+        padding: 10px;
+    }
+    .alert {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid rgb(241, 132, 132);
+        border-radius: 10px;
+        background: rgb(255, 195, 195);
+    }
+}
+        

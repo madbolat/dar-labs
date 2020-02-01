@@ -10,10 +10,16 @@ export class StudentListItemComponent implements OnInit {
 
   @Input() student: Student;
   @Output() delEvent = new EventEmitter();
+  @Output() editEvent = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  // EDIT STUDENT
+  editStud(student: Student) {
+    this.editEvent.emit(student);
   }
 
   // DELETE STUDENT

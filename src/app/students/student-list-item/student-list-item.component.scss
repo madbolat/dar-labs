@@ -1,13 +1,15 @@
 .red {
-    background: rgb(233, 159, 165);
+    background: #f5c7cb;
     color: #771122;
+}
+.green {
+    background: #c8ecc7;
+    color: #13660b;
 }
 .center {
     text-align: center;
 }
 td {
     border-radius: 5px;
-}
-button {
-    width: 50px;
+    border: 1px solid #ddd;
 }

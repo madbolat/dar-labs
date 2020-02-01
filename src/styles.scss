@@ -1,15 +1,49 @@
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     font: 16px 'Roboto Condensed', sans-serif;
     --color-header: rgb(56, 139, 60);
+    --color-header-text: rgb(21, 61, 23);
     --color-sidebar: rgb(133, 184, 140);
     input[type=text],input[type=number] {
-        display: block;
+        display: inline-block;
         padding: 10px;
         font-size: 1em;
         border-radius: 999rem;
         margin: 5px;
         border: 1px solid #ccc;
         outline: none;
+        min-width: 150px;
+    }
+    .btn {
+        padding: 10px 15px;
+        border-radius: 999rem;
+        font-size: 1em;
+        border: none;
+        outline: none;
+        margin: 5px;
+        box-shadow: 0 0 .3em rgba(0,0,0,0.3);
+        cursor: pointer;
+    }
+    .btn-link {
+        text-decoration: none;
+        color: rgb(34, 74, 206);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .btn-blue {
+        background: rgb(90, 148, 236);
+        color: rgb(15, 33, 94);
+    }
+    .btn-red {
+        background: rgb(236, 90, 90);
+        color: rgb(94, 15, 15);
+    }
+    .btn-green {
+        background: rgb(71, 209, 105);
+        color: rgb(9, 58, 24);
     }
 }

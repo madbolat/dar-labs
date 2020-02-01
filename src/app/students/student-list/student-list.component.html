@@ -1,21 +1,24 @@
 <div class="wrap">
-  <div class="row student-search">
-    <h3>Search by Name</h3>
-    <input type='text' [(ngModel)]="searchQuery" (ngModelChange)="search()" placeholder="Search" id="search"/><br>
-    <a routerLink="/student">Create Student</a>
-  </div>
-  <div class="row">
-    <table *ngIf="studentsToShow" width="100%" border="1" cellpadding="10" cellspacing="10">
+  <div class="table">
+    <table *ngIf="studentsToShow" width="100%" cellpadding="10" cellspacing="10">
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Score</th>
+        <th>Full Name</th>
         <th>Courses</th>
-        <th>Delete</th>
+        <th>Score</th>
+        <th>Buttons</th>
       </tr>
         <ng-container *ngFor='let student of studentsToShow'>
-          <tr app-student-list-item [student]="student" (click)="editStudent(student)" (delEvent)="delStudent($event)"></tr>
+          <tr app-student-list-item [student]="student" (editEvent)="editStudent($event)" (delEvent)="delStudent($event)"></tr>
         </ng-container>
     </table>
+  </div>
+  <div class="students-aside">
+    <ul>
+      <li class="srch">
+        <input type='text' [(ngModel)]="searchQuery" (ngModelChange)="search()" placeholder="Search by name" id="search"/>
+        <label for="search" class="icon"><i class="fa fa-search"></i></label>
+      </li>
+      <li><a routerLink="/student"><i class="fa fa-user-plus"></i> Create Student</a></li>
+    </ul>
   </div>
 </div>
