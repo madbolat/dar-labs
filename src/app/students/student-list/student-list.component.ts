@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+// My imports
 import { Student } from '../student.types';
 import { StudentRestService } from '../student-rest.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-list',
@@ -24,13 +26,6 @@ export class StudentListComponent implements OnInit {
     this.studentsToShow = [...this.students];
   }
 
-  // SEARCH STUDENT BY NAME
-  search() {
-    this.studentsToShow = this.students.filter(
-      student => student.firstName.toLocaleLowerCase().includes(this.searchQuery.toLocaleLowerCase())
-    )
-  }
-  
   // GET STUDENTS
   getStudents() {
     this.studentRestService.getStudents()
@@ -40,15 +35,22 @@ export class StudentListComponent implements OnInit {
     });
   }
 
+  // SEARCH STUDENT BY NAME
+  search() {
+    this.studentsToShow = this.students.filter(
+      student => student.firstName.toLocaleLowerCase().includes(this.searchQuery.toLocaleLowerCase())
+    )
+  }
+  
   // DELETE STUDENT
   delStudent(id: string) {
     this.studentRestService.deleteStudent(id)
     .subscribe(student => {
       this.getStudents();
-      // console.log(student);
     });
   }
 
+  // EDIT STUDENT
   editStudent(student: Student) {
     this.router.navigate(['student', student.id]);
   }

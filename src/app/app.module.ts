@@ -6,9 +6,10 @@ import { RouterModule, Route } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { StudentsModule } from './students/students.module';
-import { StudentComponent } from './students/student/student.component';
 import { PnfComponent } from './pnf/pnf.component';
+
+import { StudentsModule } from './students/students.module';
+import { FacultiesModule } from './faculties/faculties.module';
 
 const routes: Route[] = [
   { path: '', component: HomeComponent },
@@ -19,8 +20,7 @@ const routes: Route[] = [
   declarations: [
     AppComponent,
     HomeComponent,
-    StudentComponent,
-    PnfComponent
+    PnfComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,8 @@ const routes: Route[] = [
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    StudentsModule
+    StudentsModule,
+    FacultiesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,14 @@
+<div class="wrap">
+    <h2>{{ title }} Faculty</h2>
+    <nav>
+        <a routerLink="/faculties"><i class="fa fa-chevron-left"></i> Go back</a><span></span>
+    </nav>
+    <div class="list">
+        <form *ngIf="form" [formGroup]="form" (ngSubmit)="addFaculty()">
+            <input type="text" placeholder="Faculty name" formControlName="name"><br>
+            <div class="alert" *ngIf="formSubmitted && form.get('name').errors?.required">^ Field is empty</div>
+            <hr>
+            <button type="submit" class="btn btn-green"><i class="fa fa-check"></i> {{ title }}</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="wrap">
+    <h2>Faculties</h2>
+    <nav>
+        <a routerLink="/faculty"><i class="fa fa-plus"></i> Create New Faculty</a><span></span>
+        <input 
+            [(ngModel)]="searchQuery" 
+            (ngModelChange)="search()" 
+            type="text" 
+            placeholder="Search by name"
+        />
+    </nav>
+    <div class="list">
+        <ol>
+            <div *ngIf="facultiesToShow.length>0; else emptyList">
+                <li *ngFor="let fac of facultiesToShow">
+                    <div class="li">
+                        <div style="padding:10px;">{{ fac.name }}</div>
+                        <div>
+                            <button (click)="editFaculty(fac)" type="button" class="btn btn-blue"><i class="fa fa-pen"></i></button>
+                            <button (click)="delFaculty(fac.id)" type="button" class="btn btn-red"><i class="fa fa-trash"></i></button>
+                        </div>
+                    </div>
+                </li>
+            </div>
+            <ng-template #emptyList>
+               <li>Not found</li>
+            </ng-template>
+        </ol>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 import { Student } from '../student.types';
 
 @Component({

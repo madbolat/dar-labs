@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
-import { Student } from '../student.types';
-import { StudentRestService } from '../student-rest.service';
 import { Router, ActivatedRoute } from '@angular/router';
 // import { mergeMap } from 'rxjs/operators';
 // import { of } from 'rxjs';
+
+// My imports
+import { Student } from '../student.types';
+import { StudentRestService } from '../student-rest.service';
 
 @Component({
   selector: 'app-student',
@@ -13,10 +15,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class StudentComponent implements OnInit {
   form: FormGroup;
-  public formSubmitted:boolean = false;
   student: Student;
-  title = 'Create';
+
+  public formSubmitted:boolean = false;
   courseAdded = false;
+  title = 'Create';
 
   constructor(
     private studentRestService: StudentRestService, 
@@ -31,13 +34,14 @@ export class StudentComponent implements OnInit {
       score: new FormControl('', Validators.required),
       courses: new FormArray([]),
     });
+
+    // GET STUDENT BY ID AND SET TO FORM
     this.route.params.subscribe(params => {
       if(params.id) {
         this.title = 'Edit';
         this.studentRestService.getStudent(params.id)
         .subscribe(student => {
           this.student = student;
-          // console.log(this.student);
           this.form.patchValue(this.student);
           if(this.student.courses) {
             this.courseAdded = true;
@@ -53,6 +57,7 @@ export class StudentComponent implements OnInit {
     });
   }
 
+  // ADD COURSE
   addCourse() {
     this.courseAdded = true;
     const arrayControl = this.form.get('courses') as FormArray;
@@ -61,7 +66,7 @@ export class StudentComponent implements OnInit {
     }));
   }
   
-  // ADD NEW STUDENT
+  // ADD/EDIT NEW STUDENT
   addStudent() {
     if(!this.form.valid) {
       this.formSubmitted = true;
@@ -73,7 +78,7 @@ export class StudentComponent implements OnInit {
       score: this.form.get('score').value,
       courses: this.form.get('courses').value,
     };
-
+    // UPDATE STUDENT
     if(this.student) {
       this.student = {...this.student, ...newStudent}
       this.studentRestService.updateStudent(this.student).
@@ -84,7 +89,7 @@ export class StudentComponent implements OnInit {
       });
       return;
     }
-
+    // CREATE STUDENT
     this.studentRestService.createStudent(newStudent)
     .subscribe(student => {
       if(student) {

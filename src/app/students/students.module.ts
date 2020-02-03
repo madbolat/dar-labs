@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StudentListComponent } from './student-list/student-list.component';
-import { StudentListItemComponent } from './student-list-item/student-list-item.component';
 import { RouterModule, Route } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// My imports
+import { StudentListComponent } from './student-list/student-list.component';
+import { StudentListItemComponent } from './student-list-item/student-list-item.component';
 import { StudentComponent } from './student/student.component';
 
 const routes: Route[] = [
@@ -15,7 +17,8 @@ const routes: Route[] = [
 @NgModule({
   declarations: [
     StudentListComponent,
-    StudentListItemComponent
+    StudentListItemComponent,
+    StudentComponent
   ],
   imports: [
     CommonModule,

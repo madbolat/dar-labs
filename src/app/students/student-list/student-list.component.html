@@ -15,7 +15,13 @@
   <div class="students-aside">
     <ul>
       <li class="srch">
-        <input type='text' [(ngModel)]="searchQuery" (ngModelChange)="search()" placeholder="Search by name" id="search"/>
+        <input 
+          [(ngModel)]="searchQuery" 
+          (ngModelChange)="search()" 
+          placeholder="Search by name" 
+          type='text' 
+          id="search"
+        >
         <label for="search" class="icon"><i class="fa fa-search"></i></label>
       </li>
       <li><a routerLink="/student"><i class="fa fa-user-plus"></i> Create Student</a></li>

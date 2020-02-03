@@ -1,0 +1,41 @@
+.wrap {
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 0 1em rgba(0,0,0,.3);
+    border-radius: 10px;
+    padding: 10px 0;
+    h2 {
+        margin: 0;
+        padding: 10px 20px;
+        font-size: 2em;
+    }
+    nav {
+        padding: 20px;
+        background: rgb(163, 209, 177);
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 999rem;
+            background: rgba(0,0,0,.3);
+            &:hover {
+                background: rgba(0,0,0,.4);
+            }
+        }
+    }
+    .list {
+        padding: 20px;
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+        .alert {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid rgb(241, 132, 132);
+            border-radius: 10px;
+            background: rgb(255, 195, 195);
+        }
+    }
+}
