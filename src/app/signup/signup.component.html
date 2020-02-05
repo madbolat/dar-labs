@@ -1,4 +1,5 @@
 <div class="login-form">
+    <h1>Registration</h1><hr>
     <form [formGroup]="form" (ngSubmit)="signup()">
         <div class="form-group">
             <label for="login"><i class="fa fa-user"></i> Login:</label>
@@ -18,17 +19,18 @@
                 id="password">
         </div>
         <div class="form-group">
-            <label for="confirm"><i class="fa fa-lock"></i> Confirm password:</label>
+            <label for="confirm"><i class="fa fa-lock"></i> Confirm:</label>
             <input 
                 formControlName="confirm"
                 type="password" 
                 placeholder="Confirm password"
                 id="confirm">
+            <div class="alert" *ngIf="formSubmitted && passNotConfirm">Passwords not equal</div>
         </div>
         <hr>
         <div class="form-group">
             <button type="submit" class="btn btn-green"><i class="fas fa-user-plus"></i> Create account</button>
-            <a routerLink="/signup" class="btn btn-link"><i class="fas fa-sign-in-alt"></i> Sign in</a>
+            <a routerLink="/login" class="btn btn-link"><i class="fas fa-sign-in-alt"></i> Sign in</a>
         </div>
     </form>
 </div>

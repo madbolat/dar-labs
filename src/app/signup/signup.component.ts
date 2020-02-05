@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   form: FormGroup;
   public formSubmitted:boolean = false;
+  public passNotConfirm:boolean = false;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -29,7 +30,9 @@ export class SignupComponent implements OnInit {
       localStorage.setItem("dar-lab-auth", this.form.value['login']);
       this.router.navigate(['/']);
     } else {
-
+      this.passNotConfirm = true;
+      this.formSubmitted = true;
+      return;
     }
   }
 
