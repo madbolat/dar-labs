@@ -7,5 +7,5 @@
 [Labs 1, 2, 3](https://github.com/zxmad/dar-labs/tree/lab123)
 
 ## Lab 4...
-1 Sign in/Sign Up/Logout (Auth Guard, Router Resolver)
+1 Sign in/Sign Up/Logout (Auth Guard, Router Resolver)  
 [Labs 4](https://github.com/zxmad/dar-labs/tree/lab4)
