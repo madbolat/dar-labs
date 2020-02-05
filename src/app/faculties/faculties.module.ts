@@ -6,10 +6,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // My imports
 import { FacultyMainComponent } from './faculty-main/faculty-main.component';
 import { FacultyComponent } from './faculty/faculty.component';
+import { FacultyResolver } from './faculty.resolver';
 
 const routes: Route[] = [
-  { path: 'faculties', component: FacultyMainComponent },
-  { path: 'faculty/:id', component: FacultyComponent },
+  { path: '', component: FacultyMainComponent },
+  { 
+    path: 'faculty/:id', 
+    component: FacultyComponent, 
+    resolve: {
+      faculty: FacultyResolver
+    }
+  },
   { path: 'faculty', component: FacultyComponent },
 ];
 
@@ -23,6 +30,9 @@ const routes: Route[] = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
+  ],
+  providers: [
+    FacultyResolver
   ]
 })
 export class FacultiesModule { }

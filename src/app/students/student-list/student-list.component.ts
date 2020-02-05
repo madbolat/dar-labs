@@ -52,7 +52,7 @@ export class StudentListComponent implements OnInit {
 
   // EDIT STUDENT
   editStudent(student: Student) {
-    this.router.navigate(['student', student.id]);
+    this.router.navigate(['students/student', student.id]);
   }
 
 }

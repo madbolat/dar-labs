@@ -7,7 +7,7 @@ body {
     --color-header: rgb(56, 139, 60);
     --color-header-text: rgb(21, 61, 23);
     --color-sidebar: rgb(133, 184, 140);
-    input[type=text],input[type=number] {
+    input[type=text],input[type=number],input[type=password] {
         display: inline-block;
         padding: 10px;
         font-size: 1em;

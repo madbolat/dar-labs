@@ -28,14 +28,11 @@ export class FacultyComponent implements OnInit {
     });
 
     // GET FACULTY BY ID AND SET TO FORM
-    this.route.params.subscribe(params => {
-      if(params.id) {
+    this.route.data.subscribe(data => {
+      if(data.faculty) {
         this.title = 'Edit';
-        this.facultyRestService.getFaculty(params.id)
-        .subscribe(faculty => {
-          this.faculty = faculty;
-          this.form.patchValue(this.faculty);
-        });
+        this.faculty = data.faculty;
+        this.form.patchValue(data.faculty);
       }
     });
   }

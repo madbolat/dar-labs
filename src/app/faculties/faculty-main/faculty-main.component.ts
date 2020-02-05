@@ -52,7 +52,7 @@ export class FacultyMainComponent implements OnInit {
   
     // EDIT FACULTY
     editFaculty(faculty: Faculty) {
-      this.router.navigate(['faculty', faculty.id]);
+      this.router.navigate(['faculties/faculty', faculty.id]);
     }
     
 }

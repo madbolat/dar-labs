@@ -1,0 +1,18 @@
+<div class="layout">
+    <header class="header">
+        <h1>Students App</h1>
+        <button (click)="logout()" class="btn btn-red"><i class="fas fa-fw fa-sign-out-alt"></i> Sign Out</button>
+    </header>
+    <main class="main">
+        <aside class="sidebar">
+            <ul class="nav">
+                <li><a routerLink="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li><a routerLink="/students"><i class="fa fa-fw fa-users"></i> Students</a></li>
+                <li><a routerLink="/faculties"><i class="fas fa-fw fa-university"></i> Faculties</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <router-outlet></router-outlet>
+        </section>
+    </main>
+</div>
