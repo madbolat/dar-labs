@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 // My imports
 import { Faculty } from '../faculty.types';
-import { FacultyRestService } from '../faculty-rest.service';
+import { FacultyRestService } from '../../shared/faculty-rest.service';
 
 @Component({
   selector: 'app-faculty-main',

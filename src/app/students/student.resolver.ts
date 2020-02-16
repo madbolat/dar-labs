@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 // My imports
 import { Student } from './student.types';
-import { StudentRestService } from './student-rest.service';
+import { StudentRestService } from '../shared/student-rest.service';
 
 @Injectable()
 export class StudentResolver implements Resolve<Student> {

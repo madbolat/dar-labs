@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 // My imports
 import { Student } from '../student.types';
-import { StudentRestService } from '../student-rest.service';
+import { StudentRestService } from '../../shared/student-rest.service';
 
 @Component({
   selector: 'app-student-list',

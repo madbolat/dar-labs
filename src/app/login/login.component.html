@@ -1,6 +1,9 @@
 <div class="login-form">
     <h1>Authorization</h1><hr>
-    <form [formGroup]="form" (ngSubmit)="login()">
+    <form [formGroup]="form" (ngSubmit)="login()">        
+        <div class="alert" *ngIf="formSubmitted && passNotConfirm">
+            Username doesn't exist or wrong password
+        </div>
         <div class="form-group">
             <label for="login"><i class="fa fa-user"></i> Login:</label>
             <input 

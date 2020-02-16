@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
 // My imports
-import { FacultyRestService } from '../faculty-rest.service';
+import { FacultyRestService } from '../../shared/faculty-rest.service';
 import { Faculty } from '../faculty.types';
 
 @Component({

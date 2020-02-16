@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('dar-lab-auth');
+    localStorage.removeItem('username');
     this.router.navigate(['/login']);
   }
 
