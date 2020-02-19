@@ -13,8 +13,7 @@ class Post extends React.Component {
                             <button 
                                 className={context.post.liked ? 'Liked' : ''} 
                                 onClick={() => context.onLikedClicked(context.post.id)}
-                            >
-                                {context.post.liked ? 'Liked' : 'Like'}
+                            >{context.post.liked ? 'Liked' : 'Like'}
                             </button>
                         </div>
                     </div>
