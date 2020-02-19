@@ -1,0 +1,6 @@
+.header {
+    min-height: 50px;
+    background: royalblue;
+    display: flex;
+    justify-content: flex-end;
+}
