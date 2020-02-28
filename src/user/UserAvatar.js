@@ -1,12 +1,18 @@
 import React from 'react';
-import withUser from './withUser';
+import { connect } from 'react-redux';
+
+// import withUser from './withUser';
 
 function UserAvatar({user}) {
-    return (
+    return user ? (
         <div className="userAvatar">
             Hello, {user.firstName} {user.lastName}
         </div>
-    );
+    ) : null;
 }
 
-export default withUser(UserAvatar);
+const mapStateToProps = state => ({
+    user: state.user.userData
+});
+
+export default connect(mapStateToProps)(UserAvatar);

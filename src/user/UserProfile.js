@@ -1,15 +1,19 @@
 import React from 'react';
-import UserContext from './UserContext';
+import { connect } from 'react-redux';
 
-export default function UserProfile() {
-    return (
-        <UserContext.Consumer>
-            {user => (
-                <ul>
-                    <li>First name: {user.firstName}</li>
-                    <li>Last name: {user.lastName}</li>
-                </ul>
-            )}
-        </UserContext.Consumer>
-    )
+// import UserContext from './UserContext';
+
+function UserProfile({user}) {
+    return user ? (
+        <ul>
+            <li>First name: {user.firstName}</li>
+            <li>Last name: {user.lastName}</li>
+        </ul>
+    ) : null;
 }
+
+const mapStateToProps = state => ({
+    user: state.user.userData
+});
+
+export default connect(mapStateToProps)(UserProfile);
