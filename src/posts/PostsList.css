@@ -1,6 +1,5 @@
 .PostsList__list {
     padding: 1em 2em;
-    background: rebeccapurple fixed;
 }
 
 .Post__item {
@@ -40,5 +39,14 @@
 }
 
 .Post__item-buttons button.Liked {
-    background-color: tomato;
-}  
+    background-color: rgb(238, 38, 31);
+}
+
+.Post__date {
+    padding: 10px;   
+}
+
+.Post__date hr {
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.2);
+}

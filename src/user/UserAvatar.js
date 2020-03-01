@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 function UserAvatar({user}) {
     return user ? (
-        <div className="userAvatar">
+        <div className="UserAvatar">
             Hello, {user.firstName} {user.lastName}
         </div>
     ) : null;

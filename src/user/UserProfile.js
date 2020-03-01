@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 
 function UserProfile({user}) {
     return user ? (
-        <ul>
-            <li>First name: {user.firstName}</li>
-            <li>Last name: {user.lastName}</li>
+        <ul className="UserProfile">
+            <li><b>First name:</b> {user.firstName}</li>
+            <li><b>Last name:</b> {user.lastName}</li>
         </ul>
     ) : null;
 }

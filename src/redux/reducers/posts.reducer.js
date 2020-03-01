@@ -10,6 +10,11 @@ export default function(state = initialState, action) {
                 ...state,
                 postsData: action.payload,
             }
+        case "ADD_POST":
+            return {
+                ...state,
+                postsData: [...state.postsData, action.payload]
+            }
         case 'SET_POSTS_LOADING':
             return {
                 ...state,

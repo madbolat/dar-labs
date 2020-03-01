@@ -11,3 +11,10 @@ export const setLoading = status => {
         payload: status,
     }
 }
+
+export const addPost = post => {
+    return {
+        type: "ADD_POST",
+        payload: post,
+    }
+}

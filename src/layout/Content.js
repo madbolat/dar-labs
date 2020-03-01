@@ -1,5 +1,5 @@
 import React from 'react';
-import './Content.css';
+import './Layout.css';
 
 export default function Content({children}) {
     return (

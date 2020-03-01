@@ -1,0 +1,31 @@
+.header {
+    min-height: 50px;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: royalblue;
+    display: flex;
+    justify-content: flex-end;
+    box-shadow: 0 0 1.4em rgba(0, 0, 0, 0.308);
+    z-index: 999;
+}
+.sider {
+    background: #2c283b;
+    flex: 1 1 20%
+}
+.content {
+    flex: 1 1 80%;
+    display: flex;
+    background: rgb(90, 99, 116);
+}
+.AddPost {
+    order: 1;
+    flex: 1 1 30%;
+    background: rgb(122, 135, 160);
+}
+.PostsList__list {
+    flex: 1 1 70%;
+    overflow-y: auto;
+    scrollbar-color: rgba(0,0,0,.2) rgba(0,0,0,.05);
+    scrollbar-width: thin;
+}
