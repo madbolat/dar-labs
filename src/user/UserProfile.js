@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { List } from 'antd';
 
 // import UserContext from './UserContext';
 
 function UserProfile({user}) {
     return user ? (
-        <ul className="UserProfile">
-            <li><b>First name:</b> {user.firstName}</li>
-            <li><b>Last name:</b> {user.lastName}</li>
-        </ul>
+        <List size="small">
+            <List.Item><b>First name:</b> {user.firstName}</List.Item>
+            <List.Item><b>Last name:</b> {user.lastName}</List.Item>
+        </List>
     ) : null;
 }
 

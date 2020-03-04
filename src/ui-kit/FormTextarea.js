@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Input } from 'antd';
 
 export default (props) => {
 
@@ -22,11 +23,10 @@ export default (props) => {
     return (
         <div className="form-control">
             <label>{props.label ? props.label : ''}:</label>
-            <textarea 
+            <Input.TextArea 
                 name={props.name} 
                 onBlur={inputChangeHandler} 
                 onChange={inputChangeHandler} 
-                className="form-input" 
                 required={props.required} 
             />
             <div className="form-input-error">

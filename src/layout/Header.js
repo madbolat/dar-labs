@@ -1,10 +1,10 @@
 import React from 'react';
-import './Layout.css';
+import { Layout } from 'antd';
 
 export default function Header(props) {
     return (
-        <header className="header">
+        <Layout.Header>
             {props.children}
-        </header>
+        </Layout.Header>
     );
 }

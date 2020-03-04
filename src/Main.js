@@ -58,8 +58,8 @@ const Main = ({ getPosts, getUser }) => {
         <Content>
           {/* <LikesCounter count={likedCount} /> */}
           {/* <PostsList items={posts} onLikedClicked={onLikedClicked} /> */}
-          <PostForm />
           <PostsList />
+          <PostForm />
         </Content>
       </div>
     </div>

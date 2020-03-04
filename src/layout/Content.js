@@ -1,10 +1,10 @@
 import React from 'react';
-import './Layout.css';
+import { Layout } from 'antd';
 
 export default function Content({children}) {
     return (
-        <div className="content">
+        <Layout>
             {children}
-        </div>
+        </Layout>
     );
 }

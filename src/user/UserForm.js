@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import FormInput from '../ui-kit/FormInput';
+import { Button, Input } from 'antd';
+
 import './UserForm.css'
 
 export default () => {
@@ -76,20 +78,28 @@ export default () => {
                 />
                 <div className="form-control">
                     <label>Password:</label>
-                    <input 
+                    <Input.Password 
                         type="password" 
                         name="password" 
                         onBlur={inputChangeHandler} 
                         onChange={inputChangeHandler} 
                         placeholder="Enter password" 
-                        className="form-input" 
-                        required />
+                        required 
+                        size="large" />
                     <div className="form-input-error">
                         { !formData['password'].isValid ? formData['password'].error : '' }
                     </div>
                 </div>
                 <div className="form-control">
-                    <button type="submit" className="form-button">Submit</button>
+                    <Button 
+                        htmlType="submit" 
+                        type="primary"
+                        shape="round"
+                        size={'large'}
+                        block
+                    >
+                        Submit
+                    </Button>
                 </div>
             </form>
         </div>

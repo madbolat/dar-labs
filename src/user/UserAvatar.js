@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Typography } from 'antd';
+import { blue } from '@ant-design/colors';
 
 // import withUser from './withUser';
 
 function UserAvatar({user}) {
     return user ? (
-        <div className="UserAvatar">
+        <Typography.Title 
+            level={2}  
+            style={{color: blue[0]}}
+        >
             Hello, {user.firstName} {user.lastName}
-        </div>
+        </Typography.Title>
     ) : null;
 }
 

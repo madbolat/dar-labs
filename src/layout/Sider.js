@@ -1,11 +1,9 @@
 import React, {useCallback} from 'react';
 import { connect } from 'react-redux';
-
-import './Layout.css';
+import { Button, Card, Spin, Layout } from 'antd';
 
 import UserProfile from '../user/UserProfile';
 import UserForm from '../user/UserForm';
-
 import { getUser } from '../redux/effects/user.effects';
 
 function Sider({ userLoading, getUser }) {
@@ -14,16 +12,22 @@ function Sider({ userLoading, getUser }) {
         getUser();
     });
     return (
-        <aside className="sider">
-            <div className="randomUser">
-                { userLoading ? <div className="loader"><div></div><div></div><div></div><div></div></div> :  <UserProfile/>}
+        <Layout.Sider width={250} theme="light">
+            <Card>
+                { userLoading ? <Spin size="large"><UserProfile /></Spin> :  <UserProfile /> }
                 <br/>
-                <button onClick={onNameChangeClick} disabled={userLoading}>
+                <Button 
+                    onClick={onNameChangeClick} 
+                    type="primary" 
+                    shape="round" 
+                    size={'large'} 
+                    loading={userLoading}
+                    block>
                 { userLoading ? 'Loading...':  'Change name'}
-                </button>
-            </div>
+                </Button>
+            </Card>
             <UserForm />
-        </aside>
+        </Layout.Sider>
     );
 }
 

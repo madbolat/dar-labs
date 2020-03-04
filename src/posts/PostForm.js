@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Layout, Button } from 'antd';
+import { geekblue } from '@ant-design/colors';
 
 //My imports
 import FormInput from '../ui-kit/FormInput';
@@ -41,7 +43,7 @@ const PostForm = ({ createPost }) => {
         e.preventDefault();
         console.log('Form submitted');
         const newPost = {
-            id: 2,
+            id: Date.now(),
             title: postData.title.value,
             body: postData.body.value,
             createdAt: postData.createdAt.value,
@@ -79,7 +81,7 @@ const PostForm = ({ createPost }) => {
     }
 
     return (
-        <div className="AddPost">
+        <Layout.Sider className="AddPost" width={300} style={{background: geekblue[4]}}>
             <form onSubmit={handlerSubmit}>
                 <FormInput 
                     type="text"
@@ -100,10 +102,18 @@ const PostForm = ({ createPost }) => {
                     required={false}
                     onInputChange={inputChangeHandler} />
                 <div className="form-control">
-                    <button type="submit" className="form-button">Add post</button>
+                    <Button 
+                        htmlType="submit" 
+                        type="primary"
+                        shape="round"
+                        size={'large'}
+                        block
+                    >
+                        Add post
+                    </Button>
                 </div>
             </form>
-        </div>
+        </Layout.Sider>
     )
 }
 

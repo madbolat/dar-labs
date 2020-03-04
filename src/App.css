@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 .App {
   height: 100vh;
   display: flex;
@@ -15,18 +17,6 @@
   margin: 15px;
   border-radius: 15px;
   text-align: center;
-}
-
-.randomUser button {
-  cursor: pointer;
-  outline: none;
-  border: none;
-  background: rgb(62, 118, 202);
-  box-shadow: 0 0 1em rgba(0,0,0,0.2);
-  padding: 15px;
-  border-radius: 999rem;
-  color: rgb(22, 30, 78);
-  font-size: 1em;
 }
 
 .UserProfile {
