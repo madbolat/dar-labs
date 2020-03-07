@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import {TypeOrmModule } from '@nestjs/typeorm';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -9,6 +9,7 @@ import { QuestionnairiesModule } from './questionnairies/questionnairies.module'
 import { User } from './models/User';
 import { Category } from './models/Category';
 import { Questionnaire } from './models/Questionnaire';
+import { Question } from './models/Quesion';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { Questionnaire } from './models/Questionnaire';
       username: 'miras',
       password: 'xO5A7IvE',
       database: 'madyarDB',
-      entities: [User, Category, Questionnaire],
+      entities: [User, Category, Questionnaire, Question],
       synchronize: false,
     }),
     UsersModule,

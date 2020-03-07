@@ -23,6 +23,10 @@ export class QuestionnairiesService {
         return this.questionnaireRepository.update(id, data);
     }
 
+    deleteQuestionnaire(id: number) {
+        return this.questionnaireRepository.delete(id);
+    }
+
     getById(id: number) {
         return this.questionnaireRepository.findOne(id);
     }

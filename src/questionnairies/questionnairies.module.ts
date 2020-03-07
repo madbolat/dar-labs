@@ -1,24 +1,32 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
+
 import { Category } from "src/models/Category";
 import { Questionnaire } from "src/models/Questionnaire";
+import { Question } from "src/models/Quesion";
+
 import { CategoryService } from "./category.service";
-import { CategoryController } from "./category.controller";
 import { QuestionnairiesService } from "./questionnairies.service";
+import { QuestionsService } from "./questions.service";
+
+import { CategoryController } from "./category.controller";
 import { QuestionnairiesController } from "./questionnairies.controller";
+import { QuestionsController } from "./questions.controller";
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([Category, Questionnaire]),
+        TypeOrmModule.forFeature([Category, Questionnaire, Question]),
     ],
     exports: [TypeOrmModule],
     controllers: [
         CategoryController,
         QuestionnairiesController,
+        QuestionsController,
     ],
     providers: [
         CategoryService,
         QuestionnairiesService,
+        QuestionsService,
     ],
 })
 export class QuestionnairiesModule {

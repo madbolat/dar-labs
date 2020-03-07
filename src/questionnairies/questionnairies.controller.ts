@@ -1,11 +1,13 @@
 import { Controller, Get, Post, Body, Put, Param } from "@nestjs/common";
 import { QuestionnairiesService } from "./questionnairies.service";
+import { QuestionsService } from "./questions.service";
 
 @Controller('questionnairies')
 export class QuestionnairiesController {
 
     constructor(
-        private readonly questionnairiesService: QuestionnairiesService
+        private readonly questionnairiesService: QuestionnairiesService,
+        private readonly questionsService: QuestionsService
     ) {}
 
     @Get()
@@ -26,5 +28,10 @@ export class QuestionnairiesController {
     @Get(':id')
     getById(@Param('id') id: number) {
         return this.questionnairiesService.getById(id);
+    }
+
+    @Get(':id/questions')
+    getQuestions(@Param('id') id: number) {
+        return this.questionsService.getQuestions(id)
     }
 }
