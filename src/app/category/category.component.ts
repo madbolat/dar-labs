@@ -57,6 +57,19 @@ export class CategoryComponent implements OnInit {
       return;
     }
 
+    // Update Category
+    if(this.category) {
+      const updatedCategory = {...this.category, ...this.form.value};
+      this.categoriesService.update(updatedCategory).
+      subscribe(res => {
+        if (res) {
+          this.router.navigate(['home', 'categories']);
+        }
+      });
+      return;
+    }
+
+    // Create Category
     this.categoriesService.create(this.form.value)
       .pipe(catchError(() => of(null)))
       .subscribe(res => {
