@@ -9,13 +9,19 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './category/category.component';
+import { QuestionnairiesComponent } from './questionnairies/questionnairies.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { LoadingDirective } from './shared/loading.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CategoriesComponent,
-    CategoryComponent
+    CategoryComponent,
+    QuestionnairiesComponent,
+    LoadingDirective
   ],
   imports: [
     BrowserModule,
@@ -24,6 +30,7 @@ import { CategoryComponent } from './category/category.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgZorroAntdModule,
+    NzUploadModule
   ],
   providers: [
     {provide: NZ_I18N, useValue: en_US}

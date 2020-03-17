@@ -1,0 +1,17 @@
+<a nz-button nzType="primary" routerLink="/home/category">Create questionnaire</a>
+<nz-table #table [nzData]="questionnairies">
+  <thead>
+    <th>ID</th>
+    <th>Category</th>
+    <th>Name</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let questionnaire of table.data">
+      <td>{{ questionnaire.id }}</td>
+      <td>{{ questionnaire.categoryId }}</td>
+      <td>{{ questionnaire.name }}</td>
+      <td><a [routerLink]="['/home', 'category', questionnaire.id]">Edit</a></td>
+    </tr>
+  </tbody>
+</nz-table>
