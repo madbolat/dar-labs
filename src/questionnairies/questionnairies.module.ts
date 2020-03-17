@@ -12,6 +12,7 @@ import { QuestionsService } from "./questions.service";
 import { CategoryController } from "./category.controller";
 import { QuestionnairiesController } from "./questionnairies.controller";
 import { QuestionsController } from "./questions.controller";
+import { UploaderController } from "./uploader.controller";
 
 @Module({
     imports: [
@@ -22,6 +23,7 @@ import { QuestionsController } from "./questions.controller";
         CategoryController,
         QuestionnairiesController,
         QuestionsController,
+        UploaderController
     ],
     providers: [
         CategoryService,

@@ -10,6 +10,9 @@ export class Category {
     @Column()
     name: string;
 
+    @Column()
+    imageUrl: string;
+
     @OneToMany(type => Questionnaire, questionnaire => questionnaire.categoryId)
     questionnairies: Promise<Questionnaire[]>;
 }
