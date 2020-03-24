@@ -1,12 +1,13 @@
 import React, {useCallback} from 'react';
 import { connect } from 'react-redux';
 import { Button, Card, Spin, Layout } from 'antd';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import UserProfile from '../user/UserProfile';
 import UserForm from '../user/UserForm';
 import { getUser } from '../redux/effects/user.effects';
 
-function Sider({ userLoading, getUser }) {
+function Sider({ children, userLoading, getUser }) {
     // GET USER
     const onNameChangeClick = useCallback(() => {
         getUser();
@@ -26,7 +27,7 @@ function Sider({ userLoading, getUser }) {
                 { userLoading ? 'Loading...':  'Change name'}
                 </Button>
             </Card>
-            <UserForm />
+            {children}
         </Layout.Sider>
     );
 }

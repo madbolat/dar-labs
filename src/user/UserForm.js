@@ -3,8 +3,12 @@ import FormInput from '../ui-kit/FormInput';
 import { Button, Input } from 'antd';
 
 import './UserForm.css'
+import { useParams } from 'react-router-dom';
 
 export default () => {
+
+    const { userId } = useParams();
+    console.log(userId);
 
     // const inputName = useRef(null);
     const [formData, setFormData] = useState({

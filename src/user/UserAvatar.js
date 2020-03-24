@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { Typography } from 'antd';
 import { blue } from '@ant-design/colors';
 
@@ -20,4 +21,4 @@ const mapStateToProps = state => ({
     user: state.user.userData
 });
 
-export default connect(mapStateToProps)(UserAvatar);
+export default withRouter(connect(mapStateToProps)(UserAvatar));

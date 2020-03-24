@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import { Menu, Typography } from 'antd';
 
 import Content from './layout/Content';
 import Header from './layout/Header';
@@ -11,6 +13,7 @@ import PostForm from './posts/PostForm';
 
 import { getPosts } from './redux/effects/posts.effects';
 import { getUser } from './redux/effects/user.effects';
+import UserForm from './user/UserForm';
 
 // import LikesCounter from './LikesCounter';
 // import UserContext from './user/UserContext';
@@ -49,20 +52,49 @@ const Main = ({ getPosts, getUser }) => {
   },[]);
 
   return (
-    <div className="App">
-      <Header>
-        <UserAvatar />
-      </Header>
-      <div className="App__main">
-        <Sider />
-        <Content>
-          {/* <LikesCounter count={likedCount} /> */}
-          {/* <PostsList items={posts} onLikedClicked={onLikedClicked} /> */}
-          <PostsList />
-          <PostForm />
-        </Content>
+    <Router>
+      <div className="App">
+        <Header>
+          <UserAvatar />
+        </Header>
+        <div className="App__main">
+          <Sider>
+            <Menu>
+              <Menu.Item>
+                  <Link to="/">Home</Link>
+              </Menu.Item>
+              <Menu.Item>
+                  <Link to="/posts">Posts</Link>
+              </Menu.Item>
+              <Menu.Item>
+                  <Link to="/user-form/alice">User form for Alice</Link>
+              </Menu.Item>
+              <Menu.Item>
+                  <Link to="/user-form/bob">User form for Bob</Link>
+              </Menu.Item>
+            </Menu>
+          </Sider>
+          <Content>
+            <Switch>
+              <Route exact path="/">
+                <Typography.Title>Welcome home</Typography.Title>
+              </Route>
+              <Route path="/posts">
+                <PostsList />
+                <PostForm />
+              </Route>
+              <Route path="/user-form/:userId">
+                <UserForm />
+              </Route>
+            </Switch>
+            {/* <LikesCounter count={likedCount} /> */}
+            {/* <PostsList items={posts} onLikedClicked={onLikedClicked} /> */}
+            {/* <PostsList />
+            <PostForm /> */}
+          </Content>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
